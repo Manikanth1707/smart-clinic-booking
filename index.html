@@ -57,7 +57,9 @@
           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10); this.setCustomValidity('');"
           oninvalid="this.setCustomValidity('Please enter a valid 10-digit mobile number')"
         >
-        <small style="color: gray;">Enter a 10-digit mobile number</small>
+        <div style="margin-top: 5px; margin-bottom: 15px;">
+          <small style="color: gray;">Enter a 10-digit mobile number</small>
+        </div>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -89,10 +91,6 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
 
 
 
