@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Banka Soujanya - Gynecologist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Dr. Banka Soujanya</h1>
+    <p class="designation">MBBS, DGO – Consultant Gynecologist & Obstetrician</p>
+    <p>Rohitha Specialty Clinic, Pragathi Nagar, Hyderabad</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#appointment">Book Appointment</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About the Doctor</h2>
+    <p><strong>Dr. Banka Soujanya</strong> is a compassionate and experienced <strong>Gynecologist and Obstetrician</strong> with over <strong>13 years in medicine</strong>, including <strong>4 years as a specialist</strong>. She currently practices at <strong>Rohitha Specialty Clinic</strong>, Pragathi Nagar, Hyderabad.</p>
+    <p>She completed her <strong>MBBS</strong> from Dr. NTR University of Health Sciences in 2012, followed by <strong>DGO</strong> from Kaloji Narayana Rao University of Health Sciences in 2019.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services Offered</h2>
+    <ul>
+      <li>Pregnancy Care & Consultation</li>
+      <li>Menstrual Disorders Treatment</li>
+      <li>PCOD/PCOS Management</li>
+      <li>Infertility Evaluation</li>
+      <li>Pre & Postnatal Care</li>
+      <li>Routine Gynecology Checkups</li>
+    </ul>
+  </section>
+
+  <section id="appointment">
+    <h2>Book an Appointment</h2>
+    <div class="form-container">
+      <form id="appointment-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="^[0-9]{10}$"
+          maxlength="10"
+          required
+          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10); this.setCustomValidity('');"
+          oninvalid="this.setCustomValidity('Please enter a valid 10-digit mobile number')"
+        >
+        <small style="color: gray;">Enter a 10-digit mobile number</small>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Preferred Appointment Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Reason for Visit:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="response"></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Clinic:</strong> Rohitha Specialty Clinic<br>
+    <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
+    <strong>Phone:</strong> +91-6303818118<br>
+    <strong>Email:</strong> drsoujanya@example.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Banka Soujanya - Gynecologist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Dr. Banka Soujanya</h1>
+    <p class="designation">MBBS, DGO – Consultant Gynecologist & Obstetrician</p>
+    <p>Rohitha Specialty Clinic, Pragathi Nagar, Hyderabad</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#appointment">Book Appointment</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About the Doctor</h2>
+    <p><strong>Dr. Banka Soujanya</strong> is a compassionate and experienced <strong>Gynecologist and Obstetrician</strong> with over <strong>13 years in medicine</strong>, including <strong>4 years as a specialist</strong>. She currently practices at <strong>Rohitha Specialty Clinic</strong>, Pragathi Nagar, Hyderabad.</p>
+    <p>She completed her <strong>MBBS</strong> from Dr. NTR University of Health Sciences in 2012, followed by <strong>DGO</strong> from Kaloji Narayana Rao University of Health Sciences in 2019.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services Offered</h2>
+    <ul>
+      <li>Pregnancy Care & Consultation</li>
+      <li>Menstrual Disorders Treatment</li>
+      <li>PCOD/PCOS Management</li>
+      <li>Infertility Evaluation</li>
+      <li>Pre & Postnatal Care</li>
+      <li>Routine Gynecology Checkups</li>
+    </ul>
+  </section>
+
+  <section id="appointment">
+    <h2>Book an Appointment</h2>
+    <div class="form-container">
+      <form id="appointment-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Preferred Appointment Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Reason for Visit:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="response"></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Clinic:</strong> Rohitha Specialty Clinic<br>
+    <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
+    <strong>Phone:</strong> +91- 6303818118<br>
+    <strong>Email:</strong> drsoujanya@example.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> -->

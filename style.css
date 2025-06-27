@@ -1,0 +1,93 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #fce4ec, #e1f5fe);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #ff4081, #f50057);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.designation {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+nav {
+  background-color: #ff80ab;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #fce4ec;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  padding: 12px 25px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d81b60;
+}
+
+footer {
+  background: #f06292;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
