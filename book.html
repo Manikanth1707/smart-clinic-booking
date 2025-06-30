@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #f9f9ff, #e6f0ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .booking-wrapper {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2a2e75;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    button {
+      margin-top: 2rem;
+      background-color: #3b7ddd;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #305fc7;
+    }
+
+    .slot-btn {
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0.3rem;
+      background: #f0f4ff;
+      border: 1px solid #3b7ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .slot-btn.selected {
+      background-color: #3b7ddd;
+      color: white;
+    }
+
+    .time-slots {
+      margin-top: 1rem;
+    }
+
+    #success-popup {
+      position: fixed;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #d4edda;
+      color: #155724;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-weight: bold;
+      display: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .booking-wrapper {
+        margin: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .slot-btn {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="booking-wrapper">
+  <h2>Select Date & Time</h2>
+  <form id="appointment-form">
+    <label for="date">Select Date:</label>
+    <input type="text" id="date" placeholder="Choose a date" required />
+
+    <div class="time-slots" style="display: none;">
+      <p><strong>Select Time:</strong></p>
+      <div id="slots"></div>
+      <input type="hidden" name="appointment_time" id="appointment_time" required>
+    </div>
+
+    <label>Full Name:</label>
+    <input type="text" name="name" required />
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" required
+           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" />
+
+    <label>Email:</label>
+    <input type="email" name="email" required />
+
+    <label>Reason for Visit:</label>
+    <textarea name="message" rows="3"></textarea>
+
+    <input type="hidden" name="date" id="hidden-date" />
+    <input type="hidden" name="time" id="hidden-time" />
+
+    <button type="submit">Submit Appointment</button>
+    <p id="response"></p>
+  </form>
+</div>
+
+<!-- Success Popup -->
+<div id="success-popup">✅ Your appointment has been booked successfully!</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCaL_uV9MJYxm8pP7XRZYnQtXJGcMeuv0",
+    authDomain: "clinicappointmentapp-2b55a.firebaseapp.com",
+    projectId: "clinicappointmentapp-2b55a",
+    storageBucket: "clinicappointmentapp-2b55a.appspot.com",
+    messagingSenderId: "78170484222",
+    appId: "1:78170484222:web:87acb9f5131c22c2eb24af",
+    measurementId: "G-1H46JHY8HE"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+<script>
+  const form = document.getElementById('appointment-form');
+  const response = document.getElementById('response');
+  const popup = document.getElementById('success-popup');
+  const dateInput = document.getElementById('date');
+  const slotsContainer = document.getElementById('slots');
+  const timeInput = document.getElementById('appointment_time');
+  const timeSlotSection = document.querySelector('.time-slots');
+  const hiddenDate = document.getElementById('hidden-date');
+  const hiddenTime = document.getElementById('hidden-time');
+
+  const timeSlots = [
+    '9:00 AM - 9:30 AM', '9:30 AM - 10:00 AM', '10:00 AM - 10:30 AM',
+    '11:00 AM - 11:30 AM', '12:00 PM - 12:30 PM', '1:00 PM - 1:30 PM',
+    '2:00 PM - 2:30 PM', '3:00 PM - 3:30 PM', '4:00 PM - 4:30 PM'
+  ];
+
+  flatpickr("#date", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    disable: [date => (date.getDay() === 0 || date.getDay() === 6)],
+    onDayCreate: function(dObj, dStr, fp, dayElem) {
+      if (dayElem.classList.contains('flatpickr-disabled')) {
+        dayElem.style.opacity = "1";
+        dayElem.style.color = "#ccc";
+      }
+    },
+    onChange: (selectedDates, dateStr) => {
+      slotsContainer.innerHTML = '';
+      hiddenDate.value = dateStr;
+
+      if (dateStr) {
+        timeSlotSection.style.display = 'block';
+        timeSlots.forEach(slot => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = slot;
+          btn.className = 'slot-btn';
+          btn.onclick = () => {
+            document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            timeInput.value = slot;
+            hiddenTime.value = slot;
+          };
+          slotsContainer.appendChild(btn);
+        });
+      } else {
+        timeSlotSection.style.display = 'none';
+        timeInput.value = '';
+      }
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!hiddenTime.value) {
+      alert('Please select a time slot.');
+      return;
+    }
+
+    response.textContent = '⏳ Booking your appointment...';
+
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      date: hiddenDate.value,
+      time: hiddenTime.value,
+      message: form.message.value,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    db.collection("appointments").add(data)
+      .then(() => {
+        response.textContent = '';
+        popup.style.display = 'block';
+        setTimeout(() => popup.style.display = 'none', 4000);
+        form.reset();
+        hiddenDate.value = '';
+        hiddenTime.value = '';
+        slotsContainer.innerHTML = '';
+        timeSlotSection.style.display = 'none';
+      })
+      .catch(error => {
+        console.error("Error submitting to Firebase:", error);
+        response.textContent = '❌ Something went wrong. Please try again.';
+        response.style.color = 'red';
+      });
+  });
+</script>
+
+</body>
+</html>

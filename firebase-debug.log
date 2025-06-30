@@ -1,0 +1,59 @@
+[debug] [2025-06-30T10:30:40.556Z] ----------------------------------------------------------------------
+[debug] [2025-06-30T10:30:40.562Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions
+[debug] [2025-06-30T10:30:40.562Z] CLI Version:   14.9.0
+[debug] [2025-06-30T10:30:40.562Z] Platform:      win32
+[debug] [2025-06-30T10:30:40.562Z] Node Version:  v22.13.1
+[debug] [2025-06-30T10:30:40.563Z] Time:          Mon Jun 30 2025 16:00:40 GMT+0530 (India Standard Time)
+[debug] [2025-06-30T10:30:40.563Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-30T10:30:40.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-30T10:30:40.844Z] > authorizing via signed-in user (manikanthmani789@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-06-30T10:30:44.342Z] Using project from CLI flag: clinicappointmentapp-2b55a
+[debug] [2025-06-30T10:30:44.344Z] Checked if tokens are valid: false, expires at: 1751280088990
+[debug] [2025-06-30T10:30:44.345Z] Checked if tokens are valid: false, expires at: 1751280088990
+[debug] [2025-06-30T10:30:44.345Z] > refreshing access token with scopes: []
+[debug] [2025-06-30T10:30:44.350Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-30T10:30:44.350Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-30T10:30:44.619Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-30T10:30:44.619Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-30T10:30:44.649Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clinicappointmentapp-2b55a [none]
+[debug] [2025-06-30T10:30:45.327Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clinicappointmentapp-2b55a 200
+[debug] [2025-06-30T10:30:45.327Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clinicappointmentapp-2b55a {"projectId":"clinicappointmentapp-2b55a","projectNumber":"78170484222","displayName":"ClinicAppointmentApp","name":"projects/clinicappointmentapp-2b55a","resources":{"hostingSite":"clinicappointmentapp-2b55a"},"state":"ACTIVE","etag":"1_0a073ffc-4452-48cd-8fe3-d70f0b941bf6"}
+[info] i  Using project clinicappointmentapp-2b55a (ClinicAppointmentApp) 
+[info] 
+=== Functions Setup
+[debug] [2025-06-30T10:30:45.348Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-30T10:30:45.349Z] > authorizing via signed-in user (manikanthmani789@gmail.com)
+[debug] [2025-06-30T10:30:45.350Z] [iam] checking project clinicappointmentapp-2b55a for permissions ["firebase.projects.get"]
+[debug] [2025-06-30T10:30:45.351Z] Checked if tokens are valid: true, expires at: 1751283043620
+[debug] [2025-06-30T10:30:45.352Z] Checked if tokens are valid: true, expires at: 1751283043620
+[debug] [2025-06-30T10:30:45.352Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/clinicappointmentapp-2b55a:testIamPermissions [none]
+[debug] [2025-06-30T10:30:45.352Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/clinicappointmentapp-2b55a:testIamPermissions x-goog-quota-user=projects/clinicappointmentapp-2b55a
+[debug] [2025-06-30T10:30:45.353Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/clinicappointmentapp-2b55a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-06-30T10:30:46.659Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/clinicappointmentapp-2b55a:testIamPermissions 200
+[debug] [2025-06-30T10:30:46.660Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/clinicappointmentapp-2b55a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+Detected existing codebase(s): default, appointmentfunctions
+

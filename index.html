@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Banka Soujanya - Gynecologist</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,10 +16,11 @@
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#appointment">Book Appointment</a>
-    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+    <a href="#services">Services</a> 
+    <a href="book.html" class="highlight">Book Appointment</a>
+    <a href="contact.html">Contact</a>
+
   </nav>
 
   <section id="about">
@@ -29,171 +31,102 @@
 
   <section id="services">
     <h2>Services Offered</h2>
-    <ul>
-      <li>Pregnancy Care & Consultation</li>
-      <li>Menstrual Disorders Treatment</li>
-      <li>PCOD/PCOS Management</li>
-      <li>Infertility Evaluation</li>
-      <li>Pre & Postnatal Care</li>
-      <li>Routine Gynecology Checkups</li>
-    </ul>
+
+    <div class="service-box">
+      <img src="images/pregnancy.jpg" alt="Pregnancy Care & Consultation">
+      <h3>Pregnancy Care & Consultation</h3>
+      <p>Comprehensive prenatal and postnatal care for expectant mothers to ensure a healthy pregnancy journey.</p>
+    </div>
+
+    <div class="service-box">
+      <img src="images/menstrual.jpg" alt="Menstrual Disorders Treatment">
+      <h3>Menstrual Disorders Treatment</h3>
+      <p>Diagnosis and management of irregular periods, heavy bleeding, and other menstrual concerns.</p>
+    </div>
+
+    <div class="other-services">
+      <ul>
+        <li>PCOD/PCOS Management</li>
+        <li>Infertility Evaluation</li>
+        <li>Pre & Postnatal Care</li>
+        <li>Routine Gynecology Checkups</li>
+      </ul>
+    </div>
   </section>
 
   <section id="appointment">
     <h2>Book an Appointment</h2>
     <div class="form-container">
-      <form id="appointment-form">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Phone Number:</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          pattern="^[0-9]{10}$"
-          maxlength="10"
-          required
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10); this.setCustomValidity('');"
-          oninvalid="this.setCustomValidity('Please enter a valid 10-digit mobile number')"
-        >
-        <div style="margin-top: 5px; margin-bottom: 15px;">
-          <small style="color: gray;">Enter a 10-digit mobile number</small>
-        </div>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="date">Preferred Appointment Date:</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="message">Reason for Visit:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-      <p id="response"></p>
+      <p>
+        To schedule your appointment, please click the button below.
+      </p>
+      <a href="book.html">
+        <button>Book Appointment</button>
+      </a>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p><strong>Clinic:</strong> Rohitha Specialty Clinic<br>
-    <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
-    <strong>Phone:</strong> +91-6303818118<br>
-    <strong>Email:</strong> drsoujanya@example.com</p>
+    <p>
+      <strong>Clinic:</strong> Indira Clinic<br>
+      <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
+      <strong>Phone:</strong> +91-6303818118<br>
+      <strong>Email:</strong> drsoujanya@example.com<br>
+      <strong>Instagram:</strong>
+      <a href="https://www.instagram.com/indiraclinic?utm_source=ig_web_button_share_sheet&igsh=eW90dXhmbHJqMGpp"
+         target="_blank"
+         style="color: #a54575; font-weight: bold; text-decoration: none;">
+         @indiraclinic
+      </a>
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
-  </footer>
+  <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
+  <p>
+    <a href="https://www.instagram.com/indiraclinic" target="_blank"
+       style="color: #31076f; font-weight: bold; text-decoration: none;">
+      📸 Follow us on Instagram
+    </a>
+  </p>
 
+  <!-- ✅ Google Maps Embed -->
+  <div style="margin-top: 1rem;">
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.8050143695996!2d78.3962298!3d17.5168189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8fc7c98197a9%3A0xec5b80028c6843d4!2sIndira%20Clinic%20Best%20Psychiatry%20%26%20Gynaecology%20clinic!5e0!3m2!1sen!2sin!4v1751305380501!5m2!1sen!2sin" 
+  width="100%" 
+  height="250" 
+  style="border:0; border-radius: 8px; margin-top: 10px;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+  </div>
+</footer>
+
+  <!-- ✅ Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+  <!-- ✅ Firebase Config and Init -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCCaL_uV9MJYxm8pP7XRZYnQtXJGcMeuv0",
+      authDomain: "clinicappointmentapp-2b55a.firebaseapp.com",
+      projectId: "clinicappointmentapp-2b55a",
+      storageBucket: "clinicappointmentapp-2b55a.appspot.com",
+      messagingSenderId: "78170484222",
+      appId: "1:78170484222:web:87acb9f5131c22c2eb24af",
+      measurementId: "G-1H46JHY8HE"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+
+  <!-- ✅ Your Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Banka Soujanya - Gynecologist</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header>
-    <h1>Dr. Banka Soujanya</h1>
-    <p class="designation">MBBS, DGO – Consultant Gynecologist & Obstetrician</p>
-    <p>Rohitha Specialty Clinic, Pragathi Nagar, Hyderabad</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#appointment">Book Appointment</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About the Doctor</h2>
-    <p><strong>Dr. Banka Soujanya</strong> is a compassionate and experienced <strong>Gynecologist and Obstetrician</strong> with over <strong>13 years in medicine</strong>, including <strong>4 years as a specialist</strong>. She currently practices at <strong>Rohitha Specialty Clinic</strong>, Pragathi Nagar, Hyderabad.</p>
-    <p>She completed her <strong>MBBS</strong> from Dr. NTR University of Health Sciences in 2012, followed by <strong>DGO</strong> from Kaloji Narayana Rao University of Health Sciences in 2019.</p>
-  </section>
-
-  <section id="services">
-    <h2>Services Offered</h2>
-    <ul>
-      <li>Pregnancy Care & Consultation</li>
-      <li>Menstrual Disorders Treatment</li>
-      <li>PCOD/PCOS Management</li>
-      <li>Infertility Evaluation</li>
-      <li>Pre & Postnatal Care</li>
-      <li>Routine Gynecology Checkups</li>
-    </ul>
-  </section>
-
-  <section id="appointment">
-    <h2>Book an Appointment</h2>
-    <div class="form-container">
-      <form id="appointment-form">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="date">Preferred Appointment Date:</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="message">Reason for Visit:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-      <p id="response"></p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Clinic:</strong> Rohitha Specialty Clinic<br>
-    <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
-    <strong>Phone:</strong> +91- 6303818118<br>
-    <strong>Email:</strong> drsoujanya@example.com</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html> -->
