@@ -8,6 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- 🎉 Doctor's Day Popup -->
+<div id="doctors-day-popup">
+  <div class="popup-content">
+    <h2>Happy Doctor's Day Sister! 👩‍⚕️</h2>
+    <p>We appreciate your dedication and care. 💖</p>
+  </div>
+</div>
 
   <header>
     <h1>Dr. Banka Soujanya</h1>
@@ -154,5 +161,12 @@
   const db = firebase.firestore();
 </script>
 <script src="script.js"></script>
+<script>
+  // Automatically hide popup after 10 seconds
+  setTimeout(() => {
+    const popup = document.getElementById("doctors-day-popup");
+    popup.style.display = "none";
+  }, 3000); // 10 seconds
+</script>
 </body>
 </html>
