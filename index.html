@@ -16,12 +16,12 @@
   </header>
 
   <nav>
-    <a href="about.html">About</a>
-    <a href="#services">Services</a> 
-    <a href="book.html" class="highlight">Book Appointment</a>
-    <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="services.html" class="highlight">Services</a> 
+  <a href="book.html">Book Appointment</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  </nav>
 
   <section id="about">
     <h2>About the Doctor</h2>
@@ -29,104 +29,130 @@
     <p>She completed her <strong>MBBS</strong> from Dr. NTR University of Health Sciences in 2012, followed by <strong>DGO</strong> from Kaloji Narayana Rao University of Health Sciences in 2019.</p>
   </section>
 
-  <section id="services">
-    <h2>Services Offered</h2>
+  <!-- ...[unchanged HEAD and NAV sections above] -->
 
-    <div class="service-box">
-      <img src="images/pregnancy.jpg" alt="Pregnancy Care & Consultation">
-      <h3>Pregnancy Care & Consultation</h3>
-      <p>Comprehensive prenatal and postnatal care for expectant mothers to ensure a healthy pregnancy journey.</p>
+<section id="services">
+  <h2>Services Offered</h2>
+
+  <div class="service-box">
+    <img src="images/pregnancy.jpg" alt="Pregnancy Care & Consultation">
+    <h3>Pregnancy Care & Consultation</h3>
+    <p>Comprehensive prenatal and postnatal care for expectant mothers to ensure a healthy pregnancy journey.</p>
+  </div>
+
+  <div class="service-box">
+    <img src="images/menstrual.jpg" alt="Menstrual Disorders Treatment">
+    <h3>Menstrual Disorders Treatment</h3>
+    <p>Diagnosis and management of irregular periods, heavy bleeding, and other menstrual concerns.</p>
+  </div>
+
+  <div class="other-services">
+    <ul>
+      <li>PCOD/PCOS Management</li>
+      <li>Infertility Evaluation</li>
+      <li>Pre & Postnatal Care</li>
+      <li>Routine Gynecology Checkups</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ✅ TESTIMONIALS SECTION -->
+<section id="testimonials" style="padding: 2rem 1rem; background-color: #f7f3fc;">
+  <h2 style="text-align: center; color: #5a2d82;">💬 What Our Patients Say</h2>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: auto; margin-top: 1.5rem;">
+    
+    <div style="background: white; padding: 1rem 1.5rem; border-left: 4px solid #7a49a5; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+      <p style="font-style: italic;">"Dr. Soujanya is an exceptional gynecologist whose care and professionalism truly stand out. She takes the time to listen carefully to her patients' concerns, providing clear explanations and thoughtful recommendations."</p>
+      <p style="font-style: italic;">"Her attention to detail and genuine concern for patient well-being make her an outstanding healthcare provider."</p>
+      <p style="margin: 0.5rem 0; font-style: italic;">"Additionally, her staff is friendly and efficient, contributing to a positive overall experience."</p>
+      <strong>- Lalitha Divya ⭐⭐⭐⭐⭐</strong>
     </div>
 
-    <div class="service-box">
-      <img src="images/menstrual.jpg" alt="Menstrual Disorders Treatment">
-      <h3>Menstrual Disorders Treatment</h3>
-      <p>Diagnosis and management of irregular periods, heavy bleeding, and other menstrual concerns.</p>
+    <div style="background: white; padding: 1rem 1.5rem; border-left: 4px solid #7a49a5; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+      <p style="font-style: italic;">"Dr. Soujanya Mam is attentive, empathetic and genuinely invested in her patients' health. I have never felt rushed or uncomfortable during appointments."</p>
+      <p style="font-style: italic;">"I have recommended Dr. Soujanya Mam to friends and family and I will continue to do so 😊"</p>
+      <strong>- Priyanka ⭐⭐⭐⭐⭐</strong>
     </div>
 
-    <div class="other-services">
-      <ul>
-        <li>PCOD/PCOS Management</li>
-        <li>Infertility Evaluation</li>
-        <li>Pre & Postnatal Care</li>
-        <li>Routine Gynecology Checkups</li>
-      </ul>
+    <div style="background: white; padding: 1rem 1.5rem; border-left: 4px solid #7a49a5; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+      <p style="font-style: italic;">"Dear Dr.Sowjanya, I wanted to personally thank you for the exceptional care and support you were provided during my pregnancy period."</p>
+      <p style="font-style: italic;">"Your dedication is truly commendable, and we are very grateful for the excellent care you have given. We (including my family) feel fortunate to have you as my gynaecologist."</p>
+      <strong>- Amulya ⭐⭐⭐⭐⭐</strong>
     </div>
-  </section>
 
-  <section id="appointment">
-    <h2>Book an Appointment</h2>
-    <div class="form-container">
-      <p>
-        To schedule your appointment, please click the button below.
-      </p>
-      <a href="book.html">
-        <button>Book Appointment</button>
-      </a>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      <strong>Clinic:</strong> Indira Clinic<br>
-      <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
-      <strong>Phone:</strong> +91-6303818118<br>
-      <strong>Email:</strong> drsoujanya@example.com<br>
-      <strong>Instagram:</strong>
-      <a href="https://www.instagram.com/indiraclinic?utm_source=ig_web_button_share_sheet&igsh=eW90dXhmbHJqMGpp"
-         target="_blank"
-         style="color: #a54575; font-weight: bold; text-decoration: none;">
-         @indiraclinic
-      </a>
-    </p>
-  </section>
+<!-- ✅ Appointment section follows testimonials -->
+<section id="appointment">
+  <h2>Book an Appointment</h2>
+  <div class="form-container">
+    <p>To schedule your appointment, please click the button below.</p>
+    <a href="book.html">
+      <button>Book Appointment</button>
+    </a>
+  </div>
+</section>
 
-  <footer>
-  <p>&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
+<!-- ✅ Contact + Map + Footer (unchanged from your latest version) -->
+<section id="contact">
+  <h2>Contact</h2>
   <p>
+    <strong>Clinic:</strong> Indira Clinic<br>
+    <strong>Address:</strong> Pragathi Nagar, Hyderabad<br>
+    <strong>Phone:</strong> +91-6303818118<br>
+    <strong>Email:</strong> drsoujanya@example.com<br>
+    <strong>Instagram:</strong>
+    <a href="https://www.instagram.com/indiraclinic"
+       target="_blank"
+       style="color: #a54575; font-weight: bold; text-decoration: none;">
+       @indiraclinic
+    </a>
+  </p>
+</section>
+
+<section style="margin-top: 2rem;">
+  <h2 style="text-align: center; font-size: 1.3rem; color: #333;">📍 Visit Our Clinic</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.8050143695996!2d78.3962298!3d17.5168189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8fc7c98197a9%3A0xec5b80028c6843d4!2sIndira%20Clinic%20Best%20Psychiatry%20%26%20Gynaecology%20clinic!5e0!3m2!1sen!2sin!4v1751305380501!5m2!1sen!2sin" 
+    width="100%" 
+    height="300" 
+    style="border:0; border-radius: 10px; margin-top: 10px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<footer style="text-align: center; padding: 20px; background-color: #f9f9f9; margin-top: 1rem;">
+  <p style="margin: 5px 0;">&copy; 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician</p>
+  <p style="margin: 5px 0;">
     <a href="https://www.instagram.com/indiraclinic" target="_blank"
        style="color: #31076f; font-weight: bold; text-decoration: none;">
       📸 Follow us on Instagram
     </a>
   </p>
-
-  <!-- ✅ Google Maps Embed -->
-  <div style="margin-top: 1rem;">
-    <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.8050143695996!2d78.3962298!3d17.5168189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8fc7c98197a9%3A0xec5b80028c6843d4!2sIndira%20Clinic%20Best%20Psychiatry%20%26%20Gynaecology%20clinic!5e0!3m2!1sen!2sin!4v1751305380501!5m2!1sen!2sin" 
-  width="100%" 
-  height="250" 
-  style="border:0; border-radius: 8px; margin-top: 10px;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-  </div>
+  <p style="margin-top: 10px; font-weight: 500; background-color: #31076f; color: white; padding: 10px 15px; border-radius: 8px;">
+    © 2025 Dr. Banka Soujanya | Consultant Gynecologist & Obstetrician
+  </p>
 </footer>
 
-  <!-- ✅ Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-
-  <!-- ✅ Firebase Config and Init -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCCaL_uV9MJYxm8pP7XRZYnQtXJGcMeuv0",
-      authDomain: "clinicappointmentapp-2b55a.firebaseapp.com",
-      projectId: "clinicappointmentapp-2b55a",
-      storageBucket: "clinicappointmentapp-2b55a.appspot.com",
-      messagingSenderId: "78170484222",
-      appId: "1:78170484222:web:87acb9f5131c22c2eb24af",
-      measurementId: "G-1H46JHY8HE"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
-
-  <!-- ✅ Your Custom JS -->
-  <script src="script.js"></script>
+<!-- ✅ Firebase Scripts (unchanged) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCaL_uV9MJYxm8pP7XRZYnQtXJGcMeuv0",
+    authDomain: "clinicappointmentapp-2b55a.firebaseapp.com",
+    projectId: "clinicappointmentapp-2b55a",
+    storageBucket: "clinicappointmentapp-2b55a.appspot.com",
+    messagingSenderId: "78170484222",
+    appId: "1:78170484222:web:87acb9f5131c22c2eb24af",
+    measurementId: "G-1H46JHY8HE"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<script src="script.js"></script>
 </body>
 </html>
